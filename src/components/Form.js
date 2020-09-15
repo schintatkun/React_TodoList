@@ -1,8 +1,9 @@
 import React from "react";
+// import TodoList from "./TodoList";
 
 const Form = ({ setInputText, todos, setTodos, inputText }) => {
   const inputTextHandler = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setInputText(e.target.value);
   };
   const submitTodoHandler = (e) => {
