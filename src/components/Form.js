@@ -1,7 +1,7 @@
 import React from "react";
 // import TodoList from "./TodoList";
 
-const Form = ({ setInputText, todos, setTodos, inputText }) => {
+const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
   const inputTextHandler = (e) => {
     // console.log(e.target.value);
     setInputText(e.target.value);
@@ -18,6 +18,9 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
     ]);
     setInputText("");
   };
+  const statusHandler = (e) => {
+    setStatus(e.target.value);
+  };
   return (
     <form>
       <input
@@ -30,7 +33,7 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
-        <select name="todos" className="todo-filter">
+        <select onChange={statusHandler} name="todos" className="todo-filter">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
